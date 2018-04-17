@@ -1,0 +1,72 @@
+@font-face {
+  font-family: "Lemon Milk";
+  src: url(LemonMilk.otf);
+}
+
+:root {
+  --color1: #CF6766;
+  --color2: #031424;
+  --titlefont: "Lemon Milk";
+}
+
+html, body {
+  background-color: var(--color1);
+  overflow: hidden;
+  height: 100%;
+}
+
+#intro {
+  height: 750px;
+  width: 750px;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#end {
+  height: 410px;
+  width: 410px;
+  position: absolute;
+  top: 26px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  opacity: 0;
+}
+
+.scrollbar {
+  position: fixed;
+  top: 50%;
+  margin-top: -95px;
+  right: 0;
+  opacity: 0;
+}
+
+.scrollbarchild {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  position: relative;
+  top: 10px;
+  background-color: var(--color2);
+  margin: 15px;
+}
+
+.main {
+  height: 100px;
+  width: 100vh;
+}
+
+.aboutme {
+  font-family: var(--titlefont);
+  font-size: 40px;
+}
+
+.container1 {
+  width: 100vh;
+  height: 100vh;
+}
