@@ -3,10 +3,22 @@
   src: url(LemonMilk.otf);
 }
 
+@font-face {
+  font-family: "Caviar Dreams";
+  src: url(CaviarDreams.ttf);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
 :root {
   --color1: #CF6766;
   --color2: #031424;
+  --color3: #97AABD;
+  --color4: #EEE2DC;
   --titlefont: "Lemon Milk";
+  --bodyfont: "Caviar Dreams";
 }
 
 html, body {
@@ -19,7 +31,7 @@ html, body {
   height: 750px;
   width: 750px;
   position: absolute;
-  top:0;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -56,17 +68,82 @@ html, body {
   margin: 15px;
 }
 
-.main {
+.scrolldown {
   height: 100px;
+  width: 100px;
+  font-family: var(--bodyfont);
+  text-decoration: none;
+  color: var(--color2);
+  position: relative;
+  left: 90vh;
+  top: 90vh;
+  opacity: 0;
+}
+
+.main {
   width: 100vh;
 }
 
 .aboutme {
   font-family: var(--titlefont);
-  font-size: 40px;
+  font-size: 60px;
+  position: relative;
+  left: 100px;
+  opacity: 0;
+  padding-top: 75px;
 }
 
 .container1 {
   width: 100vh;
   height: 100vh;
+}
+
+.container2 {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.boxes {
+  height: 30vh;
+  width: 22.5vh;
+  border-radius: 10px;
+  background-color: var(--color4);
+  font-family: "Caviar Dreams";
+  font-size: 40px;
+  padding: 100px;
+  text-align: center;
+  position: relative;
+  float: left;
+  left: 10vh;
+  margin: 30px;
+  top: 100px;
+}
+
+.education {
+  opacity: 0;
+}
+
+.education p{
+  position: relative;
+  left: -20px;
+  top: 25px;
+}
+
+.work {
+  opacity: 0;
+}
+
+.work p{
+  position: relative;
+  top: 25px;
+}
+
+.wins {
+  opacity: 0;
+}
+
+.wins p{
+  position: relative;
+  top: 5px;
 }
