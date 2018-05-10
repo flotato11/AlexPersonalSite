@@ -1,3 +1,5 @@
+
+/*fonts*/
 @font-face {
   font-family: "Lemon Milk";
   src: url(LemonMilk.otf);
@@ -8,16 +10,19 @@
   src: url(CaviarDreams.ttf);
 }
 
+/*hide scrollbar*/
 ::-webkit-scrollbar {
     display: none;
 }
 
+/*root colors and fonts*/
 :root {
   --color1: #CF6766;
   --color2: #031424;
   --color3: #97AABD;
   --color4: #EEE2DC;
   --color5: #EDC7B7;
+  --color6: #BAB2B5;
   --titlefont: "Lemon Milk";
   --bodyfont: "Caviar Dreams";
 }
@@ -28,6 +33,7 @@ html, body {
   height: 100%;
 }
 
+/*animated intro and end logo*/
 #intro {
   height: 750px;
   width: 750px;
@@ -51,6 +57,13 @@ html, body {
   opacity: 0;
 }
 
+/*logo container*/
+.container1 {
+  width: 100vh;
+  height: 100vh;
+}
+
+/*side scrollbar*/
 .scrollbar {
   position: fixed;
   top: 50%;
@@ -69,6 +82,7 @@ html, body {
   margin: 15px;
 }
 
+/*scroll down button*/
 .scrolldown {
   height: 100px;
   width: 100px;
@@ -76,15 +90,17 @@ html, body {
   text-decoration: none;
   color: var(--color2);
   position: relative;
-  left: 90vh;
-  top: 90vh;
+  left: 45vw;
+  top: 92vh;
   opacity: 0;
+  overflow: none;
 }
 
 .main {
   width: 100vh;
 }
 
+/*first heading*/
 .aboutme {
   font-family: var(--titlefont);
   font-size: 60px;
@@ -94,17 +110,14 @@ html, body {
   padding-top: 75px;
 }
 
-.container1 {
-  width: 100vh;
-  height: 100vh;
-}
-
+/*first heading container*/
 .container2 {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
 
+/*first heading content*/
 .boxes {
   height: 30vh;
   width: 22.5vh;
@@ -121,16 +134,10 @@ html, body {
   top: 100px;
 }
 
+/*content categories*/
 .education {
   opacity: 0;
   background: linear-gradient(to bottom right, var(--color5), var(--color4));
-}
-
-.education p{
-  position: relative;
-  left: -25px;
-  top: 35px;
-  z-index: 3;
 }
 
 .work {
@@ -138,25 +145,34 @@ html, body {
   background: linear-gradient(to bottom right, var(--color5), var(--color4));
 }
 
-.work p{
-  position: relative;
-  top: 35px;
-  left: 0px;
-  z-index: 3;
-}
-
 .wins {
   opacity: 0;
   background: linear-gradient(to bottom right, var(--color5), var(--color4));
 }
 
-.wins p{
+/*content category text*/
+.education p {
+  position: relative;
+  left: -25px;
+  top: 35px;
+  z-index: 3;
+}
+
+.work p {
   position: relative;
   top: 35px;
   left: 0px;
   z-index: 3;
 }
 
+.wins p {
+  position: relative;
+  top: 35px;
+  left: 0px;
+  z-index: 3;
+}
+
+/*line*/
 .line {
   border-left: 2px solid var(--color3);
   height: 546px;
@@ -166,14 +182,29 @@ html, body {
   left: -351px;
 }
 
-.gradientcover{
+/*gradient color*/
+.gradientcover {
   height: 57.5vh;
   width: 50vh;
   border-radius: 10px;
   background-color: var(--color4);
   position: relative;
-  top: -773px;
+  top: -772.5px;
   left: -100px;
   z-index: 1;
   opacity: 1;
+}
+
+/*exit button*/
+.exitbutton {
+  height: 29px;
+  width: 29px;
+  border-radius: 10px;
+  color: var(--color2);
+  position: relative;
+  top: -163.46vh;
+  left: -13.7vh;
+  z-index: 4;
+  font-size: 20px;
+  opacity: 0;
 }

@@ -25,7 +25,7 @@ $(document).ready(function(){
     $('p',this).css("transition-duration", ".25s");
     $('.line',this).css("top","-237px");
     $('.line',this).css("left","61px");
-    $('.line',this).css("transition-duration", ".25s");
+    $('.line',this).css("transition-duration", ".5s");
     $('.gradientcover',this).css("opacity","0");
     $('.gradientcover',this).css("transition-duration", ".1s");
 
@@ -49,13 +49,17 @@ $(document).ready(function(){
 
   });
   $('.boxes').mouseleave(function(){
+
+
+    $('p',this).css("opacity","1");
     $('p',this).css("transform","rotate(0deg)");
     $('p',this).css("transition-duration", ".35s");
     $('.line',this).css("top","237px");
     $('.line',this).css("left","-351px");
-    $('.line',this).css("transition-duration", ".35s");
+    $('.line',this).css("transition-duration", ".55s");
     $('.gradientcover',this).css("opacity","1");
     $('.gradientcover',this).css("transition-duration", ".2s");
+    $('.exitbutton',this).css("opacity","0");
 
     if ($(this).hasClass("education")) {
       $('.education p').css("left","-25px");
@@ -73,6 +77,31 @@ $(document).ready(function(){
       $('.wins p').css("left","0px");
       $('.wins p').css("top","35px");
       $('.wins p').css("transition-duration", ".25s");
+    }
+
+  });
+});
+
+$(document).ready(function(){
+  $('.scrolldown').click(function(){
+    $(this).css("display","none");
+  });
+
+  $('.boxes').click(function(){
+    $('p',this).css("top","-100px");
+    $('p',this).css("left","0px");
+    $('p',this).css("transform","rotate(0deg)");
+    $('p',this).css("transition-duration", ".4s");
+    $('.line',this).css("top","237px");
+    $('.line',this).css("left","-351px");
+    $('.line',this).css("transition-duration", ".35s");
+    $('.exitbutton',this).css("opacity","1");
+    $('.exitbutton',this).css("transition-duration", ".35s");
+    $('.exitbutton',this).css("transition-delay", ".35s");
+
+    if ($(this).hasClass("education")) {
+      $('.education p').css("left","-25px");
+      $('.education p').css("transition-duration", ".4s");
     }
 
   });
