@@ -17,6 +17,7 @@
   --color2: #031424;
   --color3: #97AABD;
   --color4: #EEE2DC;
+  --color5: #EDC7B7;
   --titlefont: "Lemon Milk";
   --bodyfont: "Caviar Dreams";
 }
@@ -122,28 +123,57 @@ html, body {
 
 .education {
   opacity: 0;
+  background: linear-gradient(to bottom right, var(--color5), var(--color4));
 }
 
 .education p{
   position: relative;
-  left: -20px;
-  top: 25px;
+  left: -25px;
+  top: 35px;
+  z-index: 3;
 }
 
 .work {
   opacity: 0;
+  background: linear-gradient(to bottom right, var(--color5), var(--color4));
 }
 
 .work p{
   position: relative;
-  top: 25px;
+  top: 35px;
+  left: 0px;
+  z-index: 3;
 }
 
 .wins {
   opacity: 0;
+  background: linear-gradient(to bottom right, var(--color5), var(--color4));
 }
 
 .wins p{
   position: relative;
-  top: 5px;
+  top: 35px;
+  left: 0px;
+  z-index: 3;
+}
+
+.line {
+  border-left: 2px solid var(--color3);
+  height: 546px;
+  transform: rotate(41deg);
+  position: relative;
+  top: 237px;
+  left: -351px;
+}
+
+.gradientcover{
+  height: 57.5vh;
+  width: 50vh;
+  border-radius: 10px;
+  background-color: var(--color4);
+  position: relative;
+  top: -773px;
+  left: -100px;
+  z-index: 1;
+  opacity: 1;
 }

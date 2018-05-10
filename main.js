@@ -20,7 +20,62 @@ function scrollWork() {
 }
 
 $(document).ready(function(){
-  
+  $('.boxes').mouseenter(function(){
+    $('p',this).css("transform","rotate(-49deg)");
+    $('p',this).css("transition-duration", ".25s");
+    $('.line',this).css("top","-237px");
+    $('.line',this).css("left","61px");
+    $('.line',this).css("transition-duration", ".25s");
+    $('.gradientcover',this).css("opacity","0");
+    $('.gradientcover',this).css("transition-duration", ".1s");
+
+    if ($(this).hasClass("education")) {
+      $('.education p').css("left","-35px");
+      $('.education p').css("top","45px");
+      $('.education p').css("transition-duration", ".25s");
+    }
+
+    if ($(this).hasClass("work")) {
+      $('.work p').css("left","-15px");
+      $('.work p').css("top","25px");
+      $('.work p').css("transition-duration", ".25s");
+    }
+
+    if ($(this).hasClass("wins")) {
+      $('.wins p').css("left","-15px");
+      $('.wins p').css("top","25px");
+      $('.wins p').css("transition-duration", ".25s");
+    }
+
+  });
+  $('.boxes').mouseleave(function(){
+    $('p',this).css("transform","rotate(0deg)");
+    $('p',this).css("transition-duration", ".35s");
+    $('.line',this).css("top","237px");
+    $('.line',this).css("left","-351px");
+    $('.line',this).css("transition-duration", ".35s");
+    $('.gradientcover',this).css("opacity","1");
+    $('.gradientcover',this).css("transition-duration", ".2s");
+
+    if ($(this).hasClass("education")) {
+      $('.education p').css("left","-25px");
+      $('.education p').css("top","35px");
+      $('.education p').css("transition-duration", ".25s");
+    }
+
+    if ($(this).hasClass("work")) {
+      $('.work p').css("left","0px");
+      $('.work p').css("top","35px");
+      $('.work p').css("transition-duration", ".25s");
+    }
+
+    if ($(this).hasClass("wins")) {
+      $('.wins p').css("left","0px");
+      $('.wins p').css("top","35px");
+      $('.wins p').css("transition-duration", ".25s");
+    }
+
+  });
 });
 
 $(document).scroll(function(){
