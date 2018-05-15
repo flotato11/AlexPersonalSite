@@ -10,6 +10,37 @@
   src: url(CaviarDreams.ttf);
 }
 
+/*animations*/
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0,-25px,0);
+  }
+  50% {
+    transform: translate3d(0,5px,0);
+  }
+}
+
+@keyframes float {
+  0% {
+    top: 86vh
+  }
+  50% {
+    top: 94vh
+  }
+  100% {
+    top: 86vh
+  }
+}
+
 /*hide scrollbar*/
 ::-webkit-scrollbar {
     display: none;
@@ -17,22 +48,42 @@
 
 /*root colors and fonts*/
 :root {
-  --color1: #CF6766;
-  --color2: #031424;
-  --color3: #97AABD;
-  --color4: #EEE2DC;
-  --color5: #EDC7B7;
-  --color6: #BAB2B5;
+  --fadedred: #CF6766;
+  --darkblue: #031424;
+  --lightblue: #97AABD;
+  --lightbeige: #EEE2DC;
+  --mediumbeige: #EDC7B7;
+  --lightgrey: #BAB2B5;
+  --oceanblue: #0F6178;
   --titlefont: "Lemon Milk";
   --bodyfont: "Caviar Dreams";
 }
 
 html, body {
-  background-color: var(--color1);
+  max-width: 100%;
   overflow: hidden;
   height: 100%;
+  background:radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
+  margin: 0;
 }
 
+.ocean {
+  height: 2%;
+  width: 100%;
+  position:absolute;
+  bottom:0;
+  left:0;
+  background: #0F6178;
+  opacity: 0;
+}
+
+.wave{
+  position: relative;
+  top: -220px;
+  left: -50vw;
+  height: 35vh;
+  width: 150vw;
+}
 /*animated intro and end logo*/
 #intro {
   height: 750px;
@@ -78,22 +129,29 @@ html, body {
   border-radius: 50%;
   position: relative;
   top: 10px;
-  background-color: var(--color2);
+  background-color: var(--darkblue);
   margin: 15px;
 }
 
 /*scroll down button*/
 .scrolldown {
-  height: 100px;
-  width: 100px;
+  height: 30px;
+  width: 40px;
   font-family: var(--bodyfont);
   text-decoration: none;
-  color: var(--color2);
   position: relative;
-  left: 45vw;
+  left: 50vw;
   top: 92vh;
   opacity: 0;
   overflow: none;
+  z-index: 5;
+  animation-name: float;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  clip-path: polygon(50% 55%, 100% 20%, 100% 50%, 50% 85%, 0% 50%, 0 20%);
+  -webkit-clip-path: polygon(50% 55%, 100% 20%, 100% 50%, 50% 85%, 0% 50%, 0 20%);
+  background-color: var(--darkblue);
 }
 
 .main {
@@ -103,11 +161,25 @@ html, body {
 /*first heading*/
 .aboutme {
   font-family: var(--titlefont);
-  font-size: 60px;
   position: relative;
-  left: 100px;
-  opacity: 0;
-  padding-top: 75px;
+  left: 9vw;
+  height: 10vh;
+  opacity: 1;
+  padding-top: 10vh;
+}
+
+.aboutmesmall {
+  position: relative;
+  top: 3vh;
+  left: -1vw;
+  font-size: 5vw;
+}
+
+.aboutmebig {
+  position: relative;
+  top: -20vh;
+  left: -4vw;
+  font-size: 9vw;
 }
 
 /*first heading container*/
@@ -115,14 +187,17 @@ html, body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  position: static;
+  top: 500px;
+  left: -100px;
+  background: linear-gradient(var(--oceanblue), var(--lightblue));
 }
 
 /*first heading content*/
 .boxes {
   height: 30vh;
   width: 22.5vh;
-  border-radius: 10px;
-  background-color: var(--color4);
+  background-color: var(--lightbeige);
   font-family: "Caviar Dreams";
   font-size: 40px;
   padding: 100px;
@@ -137,17 +212,17 @@ html, body {
 /*content categories*/
 .education {
   opacity: 0;
-  background: linear-gradient(to bottom right, var(--color5), var(--color4));
+  background: linear-gradient(to bottom right, var(--mediumbeige), var(--lightbeige));
 }
 
 .work {
   opacity: 0;
-  background: linear-gradient(to bottom right, var(--color5), var(--color4));
+  background: linear-gradient(to bottom right, var(--mediumbeige), var(--lightbeige));
 }
 
 .wins {
   opacity: 0;
-  background: linear-gradient(to bottom right, var(--color5), var(--color4));
+  background: linear-gradient(to bottom right, var(--mediumbeige), var(--lightbeige));
 }
 
 /*content category text*/
@@ -174,7 +249,7 @@ html, body {
 
 /*line*/
 .line {
-  border-left: 2px solid var(--color3);
+  border-left: 2px solid var(--lightblue);
   height: 546px;
   transform: rotate(41deg);
   position: relative;
@@ -186,8 +261,7 @@ html, body {
 .gradientcover {
   height: 57.5vh;
   width: 50vh;
-  border-radius: 10px;
-  background-color: var(--color4);
+  background-color: var(--lightbeige);
   position: relative;
   top: -772.5px;
   left: -100px;
@@ -199,12 +273,20 @@ html, body {
 .exitbutton {
   height: 29px;
   width: 29px;
-  border-radius: 10px;
-  color: var(--color2);
+  color: var(--darkblue);
   position: relative;
-  top: -163.46vh;
+  top: -162vh;
   left: -13.7vh;
   z-index: 4;
   font-size: 20px;
   opacity: 0;
+  cursor: pointer;
+}
+
+.content {
+  visibility: hidden;
+  position: absolute;
+  top: 13vh;
+  left: 4vw;
+  padding-top: 3vh;
 }
