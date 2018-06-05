@@ -223,7 +223,7 @@ html, body {
 
 /*aboutme content*/
 .education{
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+  box-shadow: 5px 5px var(--darkblue);
   height: 10vh;
   width: 88vw;
   background-color: var(--lightbeige);

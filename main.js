@@ -21,15 +21,22 @@ $(document).ready(function(){
 
   $('.education').mouseenter(function(){
     $(this).css("height","30vh");
-    $(this).css("clip-path","polygon(0 0, 100% 0%, 60% 100%, 0% 100%);")
     $(this).css("transition-duration", ".5s");
   });
 
   $('.education').mouseleave(function(){
     $(this).css("height","10vh");
-    $(this).css("clip-path","polygon(0 0, 100% 0%, 100% 100%, 0% 100%);")
     $(this).css("transition-duration", ".5s");
   });
+
+  $('.scrollbarchild').click(function(){
+    $('.scrollbarchild').css("background-color","var(--darkblue)")
+    $(this).css("background-color","var(--lightgrey)")
+    $(this).css("transition-duration", ".5s");
+    $(this).css("transition-delay", ".5s");
+  });
+
+
 });
 
 function scrollWork() {
